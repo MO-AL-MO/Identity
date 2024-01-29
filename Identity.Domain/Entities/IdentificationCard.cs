@@ -89,6 +89,23 @@ namespace Identity.Domain.Entities
             {
                 ErrorMessage.Add("[PhotoUrl ] is required");
             }
+            //----------------- Validation Person -----------------
+            if (string.IsNullOrWhiteSpace(Person.NameFull_Validate))
+            {
+                ErrorMessage.Add("[ NameFull ] is required");
+            }
+            if (Person.Age_Validate < 13)
+            {
+                ErrorMessage.Add(" [ Age ]  is required and The age must be more than thirteen years");
+            }
+            if (string.IsNullOrWhiteSpace(Person.Gender_Validate))
+            {
+                ErrorMessage.Add("[ Gender ] is required");
+            }
+            if (Person.DateOfBirth_Validate == DateTime.MinValue)
+            {
+                ErrorMessage.Add("[ DateOfBirth ] is required");
+            }
 
             return ErrorMessage;
         }
