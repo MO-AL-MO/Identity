@@ -9,9 +9,10 @@ namespace Identity.Domain.Entities
 {
     public class Person
     {
-        private string NameFull { get; set; }
-        private int Age { get; set; }
-        private string Gender { get; set; }
+
+        public string NameFull { get; set; }
+        public int Age { get; set; }
+        public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         //----------------- Validation -----------------
 
