@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Entity.Validation" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>

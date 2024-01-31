@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity.Validator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -16,7 +17,8 @@ namespace Identity.Domain.Entities
         public abstract DateTime ReleaseDate { get; set; }
         public abstract DateTime ExpiryDate { get; set; }
         public abstract string Barcode { get; set; }
-
+       
+        
         //----------------- Validation -----------------
         //public int Id_Validate
         //{

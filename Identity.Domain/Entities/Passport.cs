@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity.Validator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
@@ -25,7 +26,20 @@ namespace Identity.Domain.Entities
         public Person Person {  get; set; }
 
         //----------------- Validation -----------------
+        public bool IsValidEntity(Validator validator)
+        {
+            validator.ValidateStringIsNullOrEmpty(Name, " is required");
+            validator.ValidateStringLength(Name, 4, 20, " must between 4 and 20 ");
 
+            if (validator.EntityError.Count > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public string Type_Validate
         {
             get => Type;

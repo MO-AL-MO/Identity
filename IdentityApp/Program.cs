@@ -1,10 +1,11 @@
-﻿using Identity.Domain.Entities;
+﻿using Entity.Validator;
+using Identity.Domain.Entities;
 using System.Reflection;
-
+Validator validator = new Validator();
 // إنشاء كائن من الفئة Passport
 Passport passport = new Passport
 {
-    Name = "John Doe",
+    Name = "",
     PlaceOfIssue = "",
     Number = 12345,
     ReleaseDate = DateTime.Now,
@@ -22,6 +23,18 @@ Passport passport = new Passport
     }
 };
 
+//if(!passport.IsValidEntity(validator))
+//{
+//   var errors = validator.GetEntityError();
+//    foreach (var error in errors)
+//    {
+//        Console.WriteLine($"- {error}");
+//    }
+//}
+////=========================================================
+//Console.WriteLine("=========================================================");
+////=========================================================
+
 // التحقق من صحة البيانات
 var validationErrors = passport.ValidateEntity();
 
@@ -38,8 +51,11 @@ else
 {
     Console.WriteLine("Passport- Validation Passed!");
 }
+
+//=========================================================
 Console.WriteLine("=========================================================");
 //=========================================================
+
 // إنشاء كائن من الفئة IdentificationCard
 IdentificationCard idCard = new IdentificationCard
 {
@@ -76,6 +92,7 @@ else
 {
     Console.WriteLine("IdentificationCard: Validation Passed!");
 }
+
 
 
 
